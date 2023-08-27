@@ -369,10 +369,6 @@ a:hover {
         column-gap: 5px;
     }
 
-    #welcome-section {
-        height: unset
-    }
-
     #carrousel-container {
         width: 100%;
     }
