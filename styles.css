@@ -117,7 +117,7 @@ body {
 }
 
 #toolsets > .expertise:last-child {
-    margin-bottom: var(--common-spacing);
+    margin-bottom: calc(var(--common-spacing) + 3px);
 }
 
 /* TOOLTIP TRICK WHEN HOVERING OVER ICONS */
