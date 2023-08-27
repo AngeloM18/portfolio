@@ -1,0 +1,488 @@
+:root {
+    --gray: rgba(160, 160, 160, 70%);
+    --card-background: rgba(160, 160, 160, 20%);
+    --django-font: min(55px, 16vw);
+    --xxl-font: min(68px, 24vw);
+    --xl-font: min(46px, 14vw);
+    --big-font: min(32px, 8vw);
+    --medium-font: min(24px, 5vw);
+    --small-font: min(16px, 3vw);
+    --common-spacing: 10px;
+}
+
+html {
+    box-sizing: border-box;
+    color: var(--gray)
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    color: inherit;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background: black;
+    font-family: "VT323";
+}
+
+
+/* TO HANDLE SPACING BETWEEN BOXES AND ELEMENTS */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.place-left {
+    width: 40%;
+}
+/* ******************************************* */
+
+
+/* NAVIGATION BAR */
+#topbar-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 min(100px, 4vw);
+    margin: 0 auto;
+}
+
+#topbar {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-topbar-elements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: var(--common-spacing);
+}
+/* *************** /*
+
+
+/* MAIN */
+#content-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* **** */
+
+
+/* WELCOME SECTION UNTIL THE EXPERTISE TOOLSET BOX */
+
+/* INTERESTS AND SKILLS PARTS */
+#welcome-section > #interests-skills {
+    height: min-content;
+    position: relative;
+    display: flex;
+    background-color: var(--card-background);
+}
+
+#interests-skills > #interests-bio {
+    width: 40%;
+    padding-bottom: var(--common-spacing);
+    margin: auto;
+}
+
+#interests-skills > #toolsets {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: var(--common-spacing);
+}
+
+/* SKILL ICON CONTAINERS (toolset, learning, want to learn) */
+#toolsets > .expertise {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--common-spacing);
+    padding: 0 var(--common-spacing);
+}
+
+#toolsets > .expertise:last-child {
+    margin-bottom: var(--common-spacing);
+}
+
+/* TOOLTIP TRICK WHEN HOVERING OVER ICONS */
+.tooltip-icon {
+    cursor: pointer;
+}
+
+.tooltip-icon > .tooltip-list {
+    position: absolute;
+    height: 1px;
+    width: min-content;
+    visibility: hidden;
+    z-index: 2;
+    top: -5px;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+}
+
+.tooltip-icon:hover > .tooltip-list {
+    visibility: visible;
+}
+
+.tooltip-list > .tooltip-item,
+.tooltip-list > .tooltip-title {
+    font-size: var(--medium-font);
+    font-family: "VT323";
+}
+
+.tooltip-list > .tooltip-item::before {
+    content: "";
+    display: inline-block;
+    margin-left: -5px;
+  }
+
+.tooltip-list > .tooltip-item {
+    margin-left: -10px;
+    font-weight: 100;
+}
+
+/* ICONS NOT INCLUDED IN FA4 */
+#django {
+    width: var(--django-font);
+}
+
+#scala {
+    width: var(--xl-font);
+}
+
+span[class="tooltip-icon"] > svg {
+    display: block;
+}
+/* ******************************** */
+
+#carrousel-container {
+    height: 70vh;
+    width: 90%;
+    background: none;
+    border: none;
+
+    margin: 0 auto;
+    position: relative;
+}
+
+/* PROJECTS SECTION */
+#projects-carrousel {
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+#projects-carrousel > .project {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+
+    transform-origin: center center;
+    transform: scale(1);
+    scroll-snap-align: center;
+}
+
+/* INNER PROJECT ELEMENTS (image, info > header, text and link) */
+.project > .project-gif {
+    display: block;
+    height: 70%;
+    max-height: min-content;
+    width: 100%;
+    max-width: max-content;
+    padding: 10px;
+    padding-bottom: 4px;
+    margin: auto;
+    opacity: 60%;
+    object-fit:contain;
+}
+
+.project > .project-info {
+    height: calc(30% - 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-info > .project-header {
+    font-size: var(--xl-font);
+    flex-grow: 0;
+}
+
+.project-info > .project-text {
+    font-size: var(--big-font);
+    flex-grow: 1;
+    max-height: 70%;
+}
+
+.project-info > .project-links {
+    font-size: var(--xl-font);
+    flex-grow: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* CARROUSEL PREVIOUS AND NEXT BUTTONS */
+#projects-carrousel::before,
+#projects-carrousel::after {
+    content: "";
+    pointer-events: none;
+    cursor: none;
+    z-index: 2;
+}
+
+.project-button,
+#projects-carrousel::before,
+#projects-carrousel::after {
+    height: 30px;
+    width: 30px;
+    border: solid var(--gray);
+    border-width: 0 3px 3px 0;
+    background: none;
+}
+
+.project-button {
+    border: none;
+}
+
+#projects-carrousel::before,
+.button-previous {
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    transform: rotate(-135deg);
+}
+
+#projects-carrousel::after,
+.button-next {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    transform: rotate(45deg);
+}
+
+/* CARROUSEL NAVIGATION BUTTONS (the ones at the top) */
+.projects-nav-buttons {
+    display: flex;
+    gap: var(--common-spacing);
+    position: absolute;
+    width: min-content;
+    height: min-content;
+    
+    top: 1%;
+    left: calc(50% - var(--common-spacing)*3);
+    z-index: 3;
+}
+
+.project-nav-button {
+    width: var(--small-font);
+    height: var(--small-font);
+    border-radius: 50%;
+    border: solid 3px var(--gray);
+    opacity: 100%;
+}
+/* *************************************************** */
+
+
+/* COMESTICS */
+.xl-font {
+    font-size: var(--xl-font)
+}
+
+.xxl-font {
+    font-size: var(--xxl-font)
+}
+
+.divider {
+    width: 100%;
+    border: 1px solid var(--gray);
+    margin: 0 auto;
+}
+
+h1, 
+h2, 
+h3,
+h5,
+p:not(.hero-text), 
+ul, 
+li, 
+figure,
+i {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    filter: invert(1);
+}
+
+.display-block {
+    display: block;
+}
+/* ********* */
+
+
+/* MEDIA QUERIES */
+@media (max-width: 800px) {
+    :root {
+        --xl-font: min(32px, 8vw);
+        --big-font: min(24px, 5vw);;
+        --django-font: min(40px, 10vw);
+    }
+
+    .flex-topbar-elements {
+        column-gap: 5px;
+    }
+
+    #welcome-section {
+        height: unset
+    }
+
+    #carrousel-container {
+        width: 100%;
+    }
+}
+/* ************* */
+
+
+/* BACKGROUND */
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: black;
+    overflow: hidden;
+    z-index: -1
+}
+
+.background > li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 19s linear infinite;
+}
+
+.background li:nth-child(0) {
+    left: 49%;
+    width: 110px;
+    height: 110px;
+    bottom: -110px;
+    animation-delay: 1s;
+}
+.background li:nth-child(1) {
+    left: 32%;
+    width: 144px;
+    height: 144px;
+    bottom: -144px;
+    animation-delay: 2s;
+}
+.background li:nth-child(2) {
+    left: 61%;
+    width: 110px;
+    height: 110px;
+    bottom: -110px;
+    animation-delay: 8s;
+}
+.background li:nth-child(3) {
+    left: 65%;
+    width: 197px;
+    height: 197px;
+    bottom: -197px;
+    animation-delay: 9s;
+}
+.background li:nth-child(4) {
+    left: 58%;
+    width: 114px;
+    height: 114px;
+    bottom: -114px;
+    animation-delay: 19s;
+}
+.background li:nth-child(5) {
+    left: 21%;
+    width: 102px;
+    height: 102px;
+    bottom: -102px;
+    animation-delay: 13s;
+}
+.background li:nth-child(6) {
+    left: 66%;
+    width: 174px;
+    height: 174px;
+    bottom: -174px;
+    animation-delay: 17s;
+}
+.background li:nth-child(7) {
+    left: 63%;
+    width: 142px;
+    height: 142px;
+    bottom: -142px;
+    animation-delay: 1s;
+}
+.background li:nth-child(8) {
+    left: 37%;
+    width: 165px;
+    height: 165px;
+    bottom: -165px;
+    animation-delay: 26s;
+}
+.background li:nth-child(9) {
+    left: 74%;
+    width: 151px;
+    height: 151px;
+    bottom: -151px;
+    animation-delay: 38s;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
