@@ -87,6 +87,7 @@ body {
     position: relative;
     display: flex;
     background-color: var(--card-background);
+    padding: var(--common-spacing) 0;
 }
 
 #interests-skills > #interests-bio {
