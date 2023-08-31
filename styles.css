@@ -92,8 +92,10 @@ body {
 
 #interests-skills > #interests-bio {
     width: 40%;
-    padding-bottom: var(--common-spacing);
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--common-spacing);
 }
 
 #interests-skills > #toolsets {
@@ -376,6 +378,11 @@ a:hover {
 /* ************* */
 
 
+/* KEYFRAMES */
+.blinking {
+    animation: blink 1.5s ease-in-out infinite alternate;
+}
+
 /* BACKGROUND */
 .background {
     position: fixed;
@@ -481,5 +488,11 @@ a:hover {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
         border-radius: 50%;
+    }
+}
+
+@keyframes blink {
+    to {
+        opacity: 0;
     }
 }
