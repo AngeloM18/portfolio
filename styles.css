@@ -252,7 +252,7 @@ span[class="tooltip-icon"] > svg {
 }
 
 .project-info > .project-links {
-    font-size: var(--xl-font);
+    font-size: var(--xxl-font);
     flex-grow: 0;
     display: flex;
     align-items: flex-end;
@@ -366,6 +366,7 @@ a:hover {
 /* MEDIA QUERIES */
 @media (max-width: 800px) {
     :root {
+        --xxl-font: min(46px, 14vw);
         --xl-font: min(32px, 8vw);
         --big-font: min(24px, 5vw);;
         --django-font: min(40px, 10vw);
