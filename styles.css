@@ -92,10 +92,14 @@ body {
 
 #interests-skills > #interests-bio {
     width: 40%;
-    margin: auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: var(--common-spacing);
+}
+
+#interests-bio > p:not(:last-child) {
+    flex-grow: 1;
 }
 
 #interests-skills > #toolsets {
