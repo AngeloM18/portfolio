@@ -368,7 +368,7 @@ a:hover {
     :root {
         --xxl-font: min(46px, 14vw);
         --xl-font: min(32px, 8vw);
-        --big-font: min(24px, 5vw);;
+        --big-font: min(24px, 5vw);
         --django-font: min(40px, 10vw);
     }
 
