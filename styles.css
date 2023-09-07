@@ -1,5 +1,6 @@
 :root {
     --gray: rgba(160, 160, 160, 70%);
+    --darker-gray: rgba(90, 90, 90, 70%);;
     --card-background: rgba(160, 160, 160, 20%);
     --django-font: min(55px, 16vw);
     --xxl-font: min(68px, 24vw);
@@ -127,8 +128,15 @@ body {
 }
 
 /* TOOLTIP TRICK WHEN HOVERING OVER ICONS */
-.tooltip-icon {
+
+/* I should place ALL tooltip icons inside a div, as inline-elments 
+(like span and i elements) should have child elements
+so the list (the class .tooltip-list) should b econtained within those div.
+ */
+.tooltip-icon,
+.foreign-icon {
     cursor: pointer;
+    transition: 500ms linear;
 }
 
 .tooltip-icon > .tooltip-list {
@@ -149,6 +157,7 @@ body {
 
 .tooltip-icon:hover > .tooltip-list {
     visibility: visible;
+    color: var(--gray)
 }
 
 .tooltip-list > .tooltip-item,
@@ -168,7 +177,7 @@ body {
     font-weight: 100;
 }
 
-/* ICONS NOT INCLUDED IN FA4 */
+/* ICONS NOT INCLUDED IN FONTAWESOME */
 #django {
     width: var(--django-font);
 }
@@ -177,8 +186,13 @@ body {
     width: var(--xl-font);
 }
 
-span[class="tooltip-icon"] > svg {
+/* 
+Display set to block, otherwise it moves other 
+icons down for some reason
+*/
+.foreign-icon {
     display: block;
+    fill: var(--gray);
 }
 /* ******************************** */
 
@@ -322,6 +336,17 @@ span[class="tooltip-icon"] > svg {
 
 
 /* COMESTICS */
+
+/* STYLING WHEN HOVERING OVER ICONS */
+.profile-icon:hover,
+.tooltip-icon:hover {
+    color: var(--darker-gray);
+}
+.foreign-icon:hover {
+    fill: var(--darker-gray)
+}
+
+/* OTHER COSMETIC STUFF */
 .xl-font {
     font-size: var(--xl-font)
 }
@@ -353,14 +378,10 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    filter: invert(1);
-}
-
 .display-block {
     display: block;
 }
-/* ********* */
+/* ********************** */
 
 
 /* MEDIA QUERIES */
