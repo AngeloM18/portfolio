@@ -164,25 +164,8 @@ body {
     margin-left: -10px;
     font-weight: 100;
 }
-
-/* ICONS NOT INCLUDED IN FONTAWESOME */
-#django {
-    width: var(--django-font);
-}
-
-#scala {
-    width: var(--xl-font);
-}
-
-/* 
-Display set to block, otherwise it moves other 
-icons down for some reason
-*/
-.foreign-icon {
-    display: block;
-    fill: var(--gray);
-}
 /* ******************************** */
+
 
 #carrousel-container {
     height: 70vh;
@@ -325,7 +308,24 @@ icons down for some reason
 
 /* COMESTICS */
 
-/* STYLING WHEN HOVERING OVER ICONS AND NAVIGATION LINKS */
+/* STYLING FOR ICONS, NAV LINKS AND WHEN HOVERING OVER THEM */
+#django {
+    width: var(--django-font);
+}
+
+#scala {
+    width: var(--xl-font);
+}
+
+/* 
+Display set to block, otherwise it moves other 
+icons down for some reason
+*/
+.foreign-icon {
+    display: block;
+    fill: var(--gray);
+}
+
 .tooltip-icon,
 .foreign-icon,
 .profile-icon,
