@@ -128,18 +128,7 @@ body {
 }
 
 /* TOOLTIP TRICK WHEN HOVERING OVER ICONS */
-
-/* I should place ALL tooltip icons inside a div, as inline-elments 
-(like span and i elements) should have child elements
-so the list (the class .tooltip-list) should b econtained within those div.
- */
-.tooltip-icon,
-.foreign-icon {
-    cursor: pointer;
-    transition: 500ms linear;
-}
-
-.tooltip-icon > .tooltip-list {
+.tooltip-container > .tooltip-list {
     position: absolute;
     height: 1px;
     width: min-content;
@@ -155,9 +144,8 @@ so the list (the class .tooltip-list) should b econtained within those div.
     text-align: left;
 }
 
-.tooltip-icon:hover > .tooltip-list {
+.tooltip-container:hover > .tooltip-list {
     visibility: visible;
-    color: var(--gray)
 }
 
 .tooltip-list > .tooltip-item,
@@ -337,9 +325,18 @@ icons down for some reason
 
 /* COMESTICS */
 
-/* STYLING WHEN HOVERING OVER ICONS */
+/* STYLING WHEN HOVERING OVER ICONS AND NAVIGATION LINKS */
+.tooltip-icon,
+.foreign-icon,
+.profile-icon,
+.nav-link {
+    cursor: pointer;
+    transition: 300ms linear;
+}
+
 .profile-icon:hover,
-.tooltip-icon:hover {
+.tooltip-icon:hover,
+.nav-link:hover {
     color: var(--darker-gray);
 }
 .foreign-icon:hover {
