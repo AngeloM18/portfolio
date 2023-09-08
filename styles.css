@@ -387,7 +387,7 @@ a {
 
 
 /* MEDIA QUERIES */
-@media (max-width: 800px) {
+@media (max-width: 640px) {
     :root {
         --xxl-font: min(46px, 14vw);
         --xl-font: min(32px, 8vw);
