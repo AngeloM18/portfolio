@@ -9,6 +9,7 @@
     --medium-font: min(24px, 5vw);
     --small-font: min(16px, 3vw);
     --common-spacing: 10px;
+    --spacing-between-sections: 60px;
 }
 
 html {
@@ -39,7 +40,7 @@ body {
 .flex-column {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: var(--spacing-between-sections);
 }
 
 .place-left {
@@ -54,6 +55,7 @@ body {
     max-width: 1200px;
     padding: 0 min(100px, 4vw);
     margin: 0 auto;
+    margin-bottom: var(--spacing-between-sections)
 }
 
 #topbar {
