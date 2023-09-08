@@ -5,7 +5,7 @@
     --django-font: min(55px, 16vw);
     --xxl-font: min(68px, 24vw);
     --xl-font: min(46px, 14vw);
-    --big-font: min(32px, 8vw);
+    --big-font: min(30px, 8vw);
     --medium-font: min(24px, 5vw);
     --small-font: min(16px, 3vw);
     --common-spacing: 10px;
@@ -170,8 +170,8 @@ body {
 
 
 #carrousel-container {
-    height: 70vh;
-    width: 90%;
+    height: 80vh;
+    width: 96%;
     background: none;
     border: none;
 
@@ -194,7 +194,6 @@ body {
 }
 
 #projects-carrousel > .project {
-    flex-shrink: 0;
     width: 100%;
     height: 100%;
     background: none;
@@ -209,9 +208,7 @@ body {
 .project > .project-gif {
     display: block;
     height: 70%;
-    max-height: min-content;
     width: 100%;
-    max-width: max-content;
     padding: 10px;
     padding-bottom: 4px;
     margin: auto;
@@ -223,27 +220,21 @@ body {
     height: calc(30% - 24px);
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
 }
 
 .project-info > .project-header {
     font-size: var(--xl-font);
-    flex-grow: 0;
 }
 
 .project-info > .project-text {
+    height: 42%;
     font-size: var(--big-font);
-    flex-grow: 1;
-    max-height: 70%;
 }
 
-.project-info > .project-links {
+.project-links {
+    flex-grow: 1;
     font-size: var(--xxl-font);
-    flex-grow: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
 }
 
 /* CARROUSEL PREVIOUS AND NEXT BUTTONS */
@@ -294,7 +285,7 @@ body {
     height: min-content;
     
     top: 1%;
-    left: calc(50% - var(--common-spacing)*3);
+    left: calc(50% - var(--common-spacing)*2);
     z-index: 3;
 }
 
@@ -302,8 +293,7 @@ body {
     width: var(--small-font);
     height: var(--small-font);
     border-radius: 50%;
-    border: solid 3px var(--gray);
-    opacity: 100%;
+    background-color: var(--gray);
 }
 /* *************************************************** */
 
@@ -312,12 +302,12 @@ body {
 
 /* STYLING FOR ICONS, NAV LINKS AND WHEN HOVERING OVER THEM */
 #django {
-    width: var(--django-font);
+    height: var(--django-font);
 }
 
 #scala {
-    width: var(--xl-font);
-    padding-bottom: 2px;
+    height: var(--xl-font);
+    margin-bottom: 3px;
 }
 
 /* 
@@ -327,25 +317,31 @@ icons down for some reason
 .foreign-icon {
     display: block;
     fill: var(--gray);
-    stroke: var(--gray);
+    stroke: none;
+    mix-blend-mode: normal;
 }
 
+.project-nav-button,
 .tooltip-icon,
 .foreign-icon,
 .profile-icon,
+.project-icon,
 .nav-link {
     cursor: pointer;
     transition: 300ms linear;
 }
 
-.profile-icon:hover,
 .tooltip-icon:hover,
+.profile-icon:hover,
+.project-icon:hover,
 .nav-link:hover {
     color: var(--darker-gray);
 }
 .foreign-icon:hover {
     fill: var(--darker-gray);
-    stroke: var(--darker-gray)
+}
+.project-nav-button:hover {
+    background-color: var(--darker-gray);
 }
 
 /* OTHER COSMETIC STUFF */
@@ -389,9 +385,9 @@ a {
 /* MEDIA QUERIES */
 @media (max-width: 640px) {
     :root {
-        --xxl-font: min(46px, 14vw);
+        --xxl-font: min(52px, 14vw);
         --xl-font: min(32px, 8vw);
-        --big-font: min(24px, 5vw);
+        --big-font: min(28px, 6vw);
         --django-font: min(40px, 10vw);
     }
 
@@ -400,7 +396,15 @@ a {
     }
 
     #carrousel-container {
-        width: 100%;
+        max-height: calc(100vw * 1.8);
+    }
+
+    .project > .project-gif {
+        height: 60%;
+    }
+
+    .project > .project-info {
+        height: calc(40% - 24px);
     }
 }
 /* ************** */
