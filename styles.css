@@ -317,6 +317,7 @@ body {
 
 #scala {
     width: var(--xl-font);
+    padding-bottom: 2px;
 }
 
 /* 
@@ -326,6 +327,7 @@ icons down for some reason
 .foreign-icon {
     display: block;
     fill: var(--gray);
+    stroke: var(--gray);
 }
 
 .tooltip-icon,
@@ -342,7 +344,8 @@ icons down for some reason
     color: var(--darker-gray);
 }
 .foreign-icon:hover {
-    fill: var(--darker-gray)
+    fill: var(--darker-gray);
+    stroke: var(--darker-gray)
 }
 
 /* OTHER COSMETIC STUFF */
