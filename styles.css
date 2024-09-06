@@ -285,7 +285,7 @@ body {
     height: min-content;
     
     top: 1%;
-    left: calc(43% - var(--common-spacing)*2);
+    left: calc(47% - var(--common-spacing)*2);
     z-index: 3;
 }
 
